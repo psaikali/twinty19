@@ -1,0 +1,15 @@
+.twinty {
+	.site-header.featured-image {
+		.hentry .entry-header {
+			@include media(tablet) {
+				margin-left: calc(2 * (100vw / 18));
+				margin-right: calc(2 * (100vw / 18));
+			}
+
+			@include media(desktop) {
+				margin-left: calc(2 * (100vw / 12));
+				margin-right: calc(2 * (100vw / 12));
+			}
+		}
+	}
+}

@@ -1,0 +1,258 @@
+.twinty {
+	/**
+	 * Masthead background styling
+	 */
+	.site-header {
+		&, .hentry:before, .hentry:after {
+			background: $header_background_color;
+			background: linear-gradient( 60deg, $header_background_color 0%, adjust-hue( $header_background_color, -25% ) 100% );
+		}
+
+		&, &.featured-image {
+			@include media(tablet) {
+				min-height: 50vh;
+			}
+		}
+
+		.site-branding-container {
+			&:before { 
+				//background-image: url( 'https://images.unsplash.com/photo-1496096265110-f83ad7f96608?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=35840c5a386390076c95d47b745ae459&auto=format&fit=crop&w=1350&q=80' );
+			}
+		}
+
+		.site-title {
+			font-size: 1.375rem;
+		}
+
+		.site-description {
+			font-size: .75rem;
+		}
+
+		/**
+		 * Main nav
+		 */
+		.main-navigation {
+			margin-top: .325rem;
+			font-size: .85rem;
+			font-family: $serif;
+
+			ul.main-menu {
+				> li {
+					margin-right: .625rem;
+
+					> a {
+						padding-bottom: .5em;
+
+						&:after {
+							display: inline-block;
+							content:".";
+						}
+					}
+
+					&.menu-item-has-children {
+						position: relative;
+						padding-left: 1em;
+
+						> a {
+							+ svg {
+								$w: .6em;
+								color:#fff;
+								position: absolute;
+								left:.1em;
+								top:50%;
+								width:$w;
+								height:$w;
+								margin-top: -$w/2;
+								opacity:.6;
+							}
+						}
+
+						&::after {
+							display: none;
+						}
+
+						ul.sub-menu {
+							left:0;
+							top: calc( 100% + .5rem );
+							float:none;
+							background: #fff;
+							width:10rem;
+							box-shadow: 0px 12px 15px -8px rgba( 0, 0, 15, .25 );
+
+							li > {
+								a {
+									font-size: .7rem;
+									color:#111;
+
+									&:hover {
+										background: $header_background_color;
+										color:#fff;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/**
+		 * Social icons
+		 */
+		nav.social-navigation {	
+			@media only screen and (min-width: 1024px) {
+				position: absolute;
+				right:0;
+				top:0;
+				margin-top: 0;
+				background: #fff;
+				border-radius: $border_radius;
+				box-shadow: 0px 12px 15px -8px rgba( 0, 0, 15, .25 );
+
+				ul {
+					display: flex;
+	
+					li {
+						margin: 0;
+						border-right: 1px solid rgba( 0, 0, 15, .175 );
+						text-align: center;
+	
+						&:last-child {
+							border-right: none;
+						}
+	
+						a {
+							color: $social_icons_color;
+							padding:.375rem .375rem;
+	
+							svg {
+								filter: none;
+								width:1rem;
+								height:1rem;
+							}
+	
+							&:hover, &:focus {
+								opacity:1;
+								color: $callout_color;
+							}
+						}
+					}
+				}
+			}
+			
+			@include media(desktop) {
+				ul {
+					li {
+						a {
+							padding:.5rem .5rem;
+
+							svg {
+								width:1.5rem;
+								height:1.5rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Make header wide again
+	 */
+	.site-branding {
+		@include media(tablet) {
+			margin: 0 calc(2 * (100vw / 12));
+			max-width: 100%;
+		}
+	}
+
+	/**
+	 * Frontpage featured items
+	 */
+	.menu-header-featured-items-container {
+		section.menu {
+			@include media(tablet) {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				article.featured-item {
+					flex-basis: 32.33%;
+
+					p {
+						display: block;
+					}
+				}
+				
+				article.featured-item:nth-child(3n+1):nth-last-child(-n+3) ~ article.featured-item {
+					margin-left: calc(1.5%);
+					margin-right: auto;
+				}
+			}
+
+			article.featured-item {
+				background: #fff;
+				margin: 0 0 1.5%;
+				text-shadow: none;
+
+				a {
+					padding: .625rem 1rem 1rem;
+					display: block;
+					height:100%;
+					word-break: break-word;
+					color: #111;
+					position: relative;
+
+					&:after {
+						$h: .2rem;
+						content:"";
+						position: absolute;
+						display: block;
+						top:-$h;
+						left:0;
+						width:0;
+						height:$h;
+						background: #fff;
+					}
+				}
+
+				h3 {
+					font-size: 1.1rem;
+					margin:0 0 .25em 0;
+					font-family: $serif;
+					font-weight: 700;
+					color: inherit;
+				}
+
+				p {
+					color: #888;
+					margin:0;
+					font-size: .625rem;
+					display: none;
+				}
+
+				&:hover {
+					box-shadow: 0px 12px 15px -8px rgba( 0, 0, 15, .25 );
+
+					a {
+						opacity: 1;
+						//color: $header_background_color;
+						color: $callout_color;
+
+						&:after {
+							background: $callout_color;
+							width:100%;
+							transition: .2s all ease-in-out;
+						}
+					}
+
+					h3 {
+						//color: inherit;
+					}
+				}
+			}
+		}
+	}
+}

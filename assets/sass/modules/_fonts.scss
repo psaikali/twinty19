@@ -1,0 +1,61 @@
+$serif: 'IBM Plex Serif', 'Georgia', serif; // Regular 400 + Bold 700
+$sans_serif: 'Montserrat', 'Helvetica', sans-serif; // Light 300 + Semi-bold 600
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	font-family: $serif;
+	font-weight: 400;
+}
+
+.main-navigation,
+.page-description,
+h2.author-title,
+.not-found .page-title,
+.error-404 .page-title,
+.post-navigation .post-title,
+.pagination .nav-links,
+.comments-title,
+.comment-author .fn,
+.no-comments,
+.site-title,
+h1, h2, h3, h4, h5, h6 {
+	font-family: $sans_serif;
+	font-weight: 300;
+}
+
+.site-info,
+.page-description,
+.post-navigation .post-title,
+.comment-metadata,
+.discussion-meta-info,
+.entry-meta,
+.entry-footer,
+.comment-reply-link,
+#cancel-comment-reply-link,
+img:after,
+.page-links,
+.sticky-post {
+	font-family: $serif;
+}
+
+.page-title {
+	font-family: $serif;
+}
+
+blockquote {
+	cite {
+		font-family: $serif;
+	}
+}
+
+// pre {
+// 	font-family: $font__pre;
+// }
+
+// code, kbd, tt, var {
+// 	font-family: $font__code;
+// }

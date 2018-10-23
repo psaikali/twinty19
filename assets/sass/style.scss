@@ -1,0 +1,39 @@
+/*
+Theme Name: Twinty Nineteen
+Theme URI: https://saika.li
+Template: twentynineteen
+Author: Pierre Saïkali
+Author URI: https://mosaika.fr
+Description: It's like Twenty Nineteen, but different.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: simpleberg
+Tags: gutenberg, resume, minimalist
+This theme, like WordPress, is licensed under the GPL.
+Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
+*/
+
+@import '../twentynineteen/sass/variables-site/variables-site';
+@import '../twentynineteen/sass/mixins/mixins-master';
+
+@import 'variables';
+@import 'modules/fonts';
+@import 'modules/layout';
+@import 'modules/header';
+
+.twinty {
+	a, .site-header.featured-image .main-navigation a, .site-header.featured-image .social-navigation a, .site-header.featured-image .site-title a, .site-header.featured-image .hentry a {
+		transition: .175s all ease-in-out;
+	
+		&:hover {
+			transition: .175s all ease-in-out;
+		}
+	}
+
+	a {
+		&:hover {
+			color: $callout_color;
+		}
+	}
+}
