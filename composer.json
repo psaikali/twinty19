@@ -1,0 +1,23 @@
+{
+  "name": "pskli/twinty19",
+  "description": "WordPress child-theme for TwentyNineteen. It's like Twenty Nineteen, but different.",
+  "license": "GPL-2.0+",
+  "type": "wordpress-theme",
+  "authors": [
+    {
+      "name": "Pierre Saïkali",
+      "role": "Developer",
+      "homepage": "https://mosaika.fr",
+      "email": "dev@mosaika.fr"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/psaikali/twintynineteen/issues"
+  },
+  "require": {
+    "php": ">=7.0",
+    "composer/installers": "~1.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
