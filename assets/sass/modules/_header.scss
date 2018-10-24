@@ -263,4 +263,8 @@
 	.hentry .entry-header {
 		display: none;
 	}
+
+	&.home .hentry .entry-header {
+		display: block;
+	}
 }
