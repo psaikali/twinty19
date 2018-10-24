@@ -10,7 +10,7 @@
 
 		&, &.featured-image {
 			@include media(tablet) {
-				min-height: 50vh;
+				min-height: 35vh;
 			}
 		}
 
@@ -254,5 +254,12 @@
 				}
 			}
 		}
+	}
+
+	/**
+	 * @todo Remove that and override template files when parent theme development is stable
+	 */
+	.hentry .entry-header {
+		display: none;
 	}
 }

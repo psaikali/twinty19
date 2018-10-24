@@ -366,6 +366,7 @@ gulp.task( 'watch', function() {
 		'open': false, // Open project in a new tab?
 		'injectChanges': true,  // Auto inject changes instead of full reload.
 		'proxy': 'http://sandbox.wp', // Use https://twinty.test:3000 to use BrowserSync.
+		'port': 4321,
 		'watchOptions': {
 			'debounceDelay': 500 // Wait 500ms second before injecting.
 		}
