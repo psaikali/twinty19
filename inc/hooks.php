@@ -99,9 +99,10 @@ add_action( 'twinty_start_content', __NAMESPACE__ . '\display_header_top_quote' 
 function display_header_alternative_content() {
 	if ( is_front_page() ) {
 		wp_nav_menu( [
-			'theme_location' => 'header_featured_items',
-			'items_wrap'     => '<section id="%1$s" class="%2$s">%3$s</section>',
-			'walker'         => new \TwintyNineteen\Walkers\Header_Featured_Items(),
+			'container_class' => 'featured-items',
+			'theme_location'  => 'header_featured_items',
+			'items_wrap'      => '<section id="%1$s" class="%2$s">%3$s</section>',
+			'walker'          => new \TwintyNineteen\Walkers\Header_Featured_Items(),
 		] );
 	}
 
