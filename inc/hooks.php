@@ -120,7 +120,7 @@ add_action( 'twinty_header_alternative_content', __NAMESPACE__ . '\display_heade
 
 function display_content_before_featured_items() {
 	?><div class="frontpage-intro-text"><p><?php
-	_e( 'Discover what I love to do', 'twinty' );
+	_e( 'Discover what I love to do:', 'twinty' );
 	?></p></div><?php
 }
 add_action( 'twinty_before_frontpage_featured_items', __NAMESPACE__ . '\display_content_before_featured_items' );
