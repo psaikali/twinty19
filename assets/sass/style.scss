@@ -22,6 +22,27 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 @import 'modules/layout';
 @import 'modules/header';
 @import 'modules/wp-timeliner';
+@import 'modules/hf-forms';
+
+html {
+	$fs: 22px;
+
+	& {
+		font-size: $fs * .75;
+	}
+
+	@include media(tablet) {
+		font-size: $fs * .8675;
+	}
+
+	@include media(desktop) {
+		font-size: $fs * 0.9;
+	}
+
+	@include media(wide) {
+		font-size: $fs;
+	}
+}
 
 .twinty {
 	a, .site-header.featured-image .main-navigation a, .site-header.featured-image .social-navigation a, .site-header.featured-image .site-title a, .site-header.featured-image .hentry a {

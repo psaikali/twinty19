@@ -279,7 +279,7 @@
 			text-shadow: none;
 			color:#fff;
 
-			@include media(tablet) {
+			@include media(desktop) {
 				max-width: calc(6 * (100vw / 12));
 			}
 		}
