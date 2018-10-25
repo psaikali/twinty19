@@ -278,6 +278,10 @@
 		div.entry-description {
 			text-shadow: none;
 			color:#fff;
+
+			@include media(tablet) {
+				max-width: calc(6 * (100vw / 12));
+			}
 		}
 
 		ul.terms {
