@@ -130,7 +130,9 @@ function display_header_alternative_content() {
 
 	else if ( is_tax() ) {
 		echo sprintf( '<h1 class="entry-title">%1$s</h1>', single_term_title( '', false ) );
-		echo sprintf( '<div class="entry-description">%1$s</div>', term_description() );
+		if ( strlen( term_description() ) > 0 ) {
+			echo sprintf( '<div class="entry-description">%1$s</div>', term_description() );
+		}		
 	}
 }
 add_action( 'twinty_header_alternative_content', __NAMESPACE__ . '\display_header_alternative_content' );
