@@ -171,6 +171,16 @@
 	/**
 	 * Frontpage featured items
 	 */
+	div.frontpage-intro-text {
+		color:#fff;
+		text-shadow: none;
+		
+		p {
+			font-family: $sans_serif;
+			font-weight: 600;
+		}
+	}
+
 	.featured-items {
 		section.menu {
 			@include media(tablet) {

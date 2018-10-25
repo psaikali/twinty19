@@ -98,6 +98,8 @@ add_action( 'twinty_start_content', __NAMESPACE__ . '\display_header_top_quote' 
  */
 function display_header_alternative_content() {
 	if ( is_front_page() ) {
+		do_action( 'twinty_before_frontpage_featured_items' );
+
 		wp_nav_menu( [
 			'container_class' => 'featured-items',
 			'theme_location'  => 'header_featured_items',
@@ -115,3 +117,10 @@ function display_header_alternative_content() {
 	}
 }
 add_action( 'twinty_header_alternative_content', __NAMESPACE__ . '\display_header_alternative_content' );
+
+function display_content_before_featured_items() {
+	?><div class="frontpage-intro-text"><p><?php
+	_e( 'Welcome! Have a look at what I love to do:', 'twinty' );
+	?></p></div><?php
+}
+add_action( 'twinty_before_frontpage_featured_items', __NAMESPACE__ . '\display_content_before_featured_items' );
