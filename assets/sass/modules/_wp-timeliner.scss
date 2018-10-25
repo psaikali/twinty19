@@ -1,0 +1,5 @@
+@include media(tablet) {
+	section.wpt-timeline {
+		margin: 0 calc(2 * (100vw / 12));
+	}
+}

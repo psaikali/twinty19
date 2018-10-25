@@ -109,18 +109,65 @@ function display_header_alternative_content() {
 	}
 
 	else if ( is_home() ) {
-		// List of categories
+		echo sprintf( '<h1 class="entry-title">%1$s</h1>', get_the_title( get_option( 'page_for_posts' ) ) );
+		$categories = get_categories( [ 'hide_empty' => true, 'parent' => 0, 'orderby' => 'count', 'order' => 'DESC' ] );
+		if ( !empty( $categories ) ) {
+			echo '<ul class="category terms">';
+			foreach ( $categories as $category ) {
+				printf(
+					'<li><a href="%2$s">%1$s</a></li>',
+					$category->name,
+					esc_url( get_term_link( $category->term_id ) )
+				);
+			}
+			echo '</ul>';
+		}	
 	}
 
-	else {
-		echo '<p>Alternative content</p>';
+	else if ( is_singular() ) {
+		echo sprintf( '<h1 class="entry-title">%1$s</h1>', single_post_title() );
+	}
+
+	else if ( is_tax() ) {
+		echo sprintf( '<h1 class="entry-title">%1$s</h1>', single_term_title( '', false ) );
+		echo sprintf( '<div class="entry-description">%1$s</div>', term_description() );
 	}
 }
 add_action( 'twinty_header_alternative_content', __NAMESPACE__ . '\display_header_alternative_content' );
 
+/**
+ * Display intro text before featured items on frontpage
+ *
+ * @return void
+ */
 function display_content_before_featured_items() {
 	?><div class="frontpage-intro-text"><p><?php
 	_e( 'Discover what I love to do:', 'twinty' );
 	?></p></div><?php
 }
 add_action( 'twinty_before_frontpage_featured_items', __NAMESPACE__ . '\display_content_before_featured_items' );
+
+/**
+ * Disable WP-Timeliner plugin compatibility hooks
+ */
+add_filter( 'wpt.theme.load_compatibility_hooks', '__return_false' );
+
+/**
+ * Add twentynineteen markup before WP-Timeliner loop
+ */
+function wp_timeliner_before_loop_markup() {
+	?>
+	<div class="entry-content">
+	<?php
+}
+add_action( 'wpt.template.before-loop', __NAMESPACE__ . '\wp_timeliner_before_loop_markup' );
+
+/**
+ * Add twentynineteen markup after WP-Timeliner loop
+ */
+function wp_timeliner_after_loop_markup() {
+	?>
+	</div>
+	<?php
+}
+add_action( 'wpt.template.after-loop', __NAMESPACE__ . '\wp_timeliner_after_loop_markup' );
