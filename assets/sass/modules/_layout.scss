@@ -12,4 +12,12 @@
 			}
 		}
 	}
+
+	.jp-relatedposts {
+		margin: 5vw 1rem;
+
+		@include media(desktop) {
+			margin: 5vw calc(2 * (100vw / 12));
+		}
+	}
 }
