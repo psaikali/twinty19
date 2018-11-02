@@ -21,6 +21,8 @@ Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
 @import 'modules/fonts';
 @import 'modules/layout';
 @import 'modules/header';
+@import 'modules/footer';
+@import 'modules/frontpage';
 @import 'modules/wp-timeliner';
 @import 'modules/hf-forms';
 
@@ -61,5 +63,9 @@ html {
 
 	p, li {
 		//margin:0 0 1em;
+	}
+
+	h1:not(.site-title):before, h2:before {
+		display: none;
 	}
 }

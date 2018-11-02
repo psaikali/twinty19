@@ -21,6 +21,7 @@ if ( ! function_exists( __NAMESPACE__ . '\setup' ) ) {
 		register_nav_menus(
 			[
 				'header_featured_items' => esc_html__( 'Header featured items', 'twinty' ),
+				'footer_menu'           => esc_html__( 'Footer menu', 'twinty' ),
 			]
 		);
 

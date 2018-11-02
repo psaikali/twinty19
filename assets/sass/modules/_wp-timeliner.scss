@@ -1,5 +1,20 @@
-@include media(tablet) {
+.twinty {
 	section.wpt-timeline {
-		margin: 0 calc(2 * (100vw / 12));
+		@include media(tablet) {
+			margin: 0 calc(2 * (100vw / 12));
+		}
+
+		article.wpt-achievement {
+			.wpt-summary p {
+				font-size: .8rem;
+				line-height: 1.6;
+			}
+
+			footer.wpt-read-more-button {
+				a {
+					font-weight: bold;
+				}
+			}
+		}
 	}
 }

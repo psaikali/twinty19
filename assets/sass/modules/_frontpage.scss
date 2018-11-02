@@ -1,0 +1,17 @@
+.home.twinty {
+	div.wp-block-cover.home-contact-cta {
+		margin-bottom: 7.5vh;
+
+		p {
+			max-width:80%;
+			width:80%;
+			font-family: $sans_serif;
+			font-weight: 300;
+
+			a {
+				font-family: $serif;
+				font-size: 75%;
+			}
+		}
+	}
+}	
