@@ -12,8 +12,6 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<?php var_dump( $post->achievement->get_timeline() ); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content(
